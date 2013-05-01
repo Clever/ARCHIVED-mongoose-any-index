@@ -11,7 +11,9 @@
   debug = require('debug')('mongoose-any-index:lib/index');
 
   module.exports = function(schema, options) {
-    schema._indexes = schema._indexes.concat(options);
+    _(options).each(function(index_spec) {
+      return schema._indexes.push([index_spec.keys, index_spec.options]);
+    });
     return schema.statics.fullEnsureIndexes = function(cb) {
       var _this = this;
 

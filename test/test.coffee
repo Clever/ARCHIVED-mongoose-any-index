@@ -55,7 +55,7 @@ describe 'mongoose-any-index', ->
       tags: [{type: String}]
       data: { type: Schema.Types.Mixed }
     Awesome.plugin any_index, [
-      [ { 'data.whatever_you_want': 1 }, { unique: true, sparse: true } ]
+      { keys: { 'data.whatever_you_want': 1 }, options: { unique: true, sparse: true } }
     ]
     @connection.model 'Awesome', Awesome
     setTimeout () =>
@@ -93,7 +93,7 @@ describe 'mongoose-any-index', ->
       tags: [{type: String}]
       data: { type: Schema.Types.Mixed }
     Awesome.plugin any_index, [
-      [ { 'data.something_different': 1 }, { unique: true, sparse: true } ]
+      { keys: { 'data.something_different': 1 }, options: { unique: true, sparse: true } }
     ]
     @connection.model 'Awesome', Awesome
     async.waterfall [

@@ -13,7 +13,7 @@
       tags: [{type: String}]
       data: { type: Schema.Types.Mixed }
     Awesome.plugin any_index, [
-      [ { 'data.nested_field': 1 }, { unique: true, sparse: true } ]
+      { keys: { 'data.nested_field': 1 }, options: { unique: true, sparse: true } }
     ]
     ```
 

@@ -4,7 +4,8 @@ _ = require 'underscore'
 debug = require('debug') 'mongoose-any-index:lib/index'
 
 module.exports = (schema, options) ->
-  schema._indexes = schema._indexes.concat options
+  _(options).each (index_spec) ->
+    schema._indexes.push [index_spec.keys, index_spec.options]
 
   schema.statics.fullEnsureIndexes = (cb) ->
     async.waterfall [
