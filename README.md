@@ -1,5 +1,7 @@
 # mongoose-any-index
 
+[![Build Status](https://travis-ci.org/Clever/mongoose-any-index.png)](https://travis-ci.org/Clever/mongoose-any-index)
+
 [Mongoose](http://mongoosejs.com) plugin that adds some additional functionality to mongoose indexes:
 
 1. Lets you add arbitrary indexes to any path, regardless of whether it's specified in your schema. The typical case is when you want sparse indexes within a Mixed type:
