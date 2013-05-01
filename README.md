@@ -5,6 +5,7 @@
 1. Lets you add arbitrary indexes to any path, regardless of whether it's specified in your schema. The typical case is when you want sparse indexes within a Mixed type:
 
     ```coffeescript
+    any_index = require 'mongoose-any-index'
     Awesome = new Schema
       email: { type: String, index: true, unique: true, required: true }
       tags: [{type: String}]
