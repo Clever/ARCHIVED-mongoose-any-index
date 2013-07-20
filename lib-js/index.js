@@ -16,7 +16,6 @@
     });
     return schema.statics.fullEnsureIndexes = function(cb) {
       var _this = this;
-
       return async.waterfall([
         function(cb_wf) {
           return _this.ensureIndexes(cb_wf);
@@ -27,7 +26,6 @@
         }, function(indexes, cb_wf) {
           return async.forEachSeries(indexes, function(index, cb_fe) {
             var field, match;
-
             if (__indexOf.call(_(index.key).keys(), '_id') >= 0) {
               return cb_fe();
             }
@@ -38,8 +36,8 @@
             if (match != null) {
               return cb_fe();
             }
-            debug("no match for " + (util.inspect(index)));
-            return _this.collection.dropIndex(index.name, cb_fe);
+            console.log("no match for " + (util.inspect(index)) + ", should be dropped");
+            return cb_fe();
           }, cb_wf);
         }
       ], cb);

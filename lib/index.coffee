@@ -23,5 +23,6 @@ module.exports = (schema, options) ->
           # https://jira.mongodb.org/browse/SERVER-9856 makes this unsafe
           console.log "no match for #{util.inspect(index)}, should be dropped"
           # @collection.dropIndex index.name, cb_fe
+          cb_fe()
         , cb_wf
     ], cb

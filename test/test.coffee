@@ -153,6 +153,15 @@ describe 'mongoose-any-index', ->
           safe: null
         ,
           v: 1
+          key: { 'data.whatever_you_want': 1 }
+          unique: true
+          ns: 'test-any-index.awesomes'
+          name: 'data.whatever_you_want_1'
+          sparse: true
+          background: true
+          safe: null
+        ,
+          v: 1
           key: { 'data.something_different': 1 }
           unique: true
           ns: 'test-any-index.awesomes'

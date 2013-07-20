@@ -26,7 +26,7 @@ module.exports = (grunt) ->
 
     simplemocha:
       options:
-        timeout: 3000
+        timeout: 60000
         ignoreLeaks: false
       all:
         src: 'test/**/*.coffee'
