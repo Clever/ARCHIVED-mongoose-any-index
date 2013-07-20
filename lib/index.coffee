@@ -20,7 +20,8 @@ module.exports = (schema, options) ->
           match = _(schema.indexes()).find (schema_index_spec) ->
             _(schema_index_spec[0]).isEqual index.key
           return cb_fe() if match?
-          debug "no match for #{util.inspect(index)}"
-          @collection.dropIndex index.name, cb_fe
+          # https://jira.mongodb.org/browse/SERVER-9856 makes this unsafe
+          console.log "no match for #{util.inspect(index)}, should be dropped"
+          # @collection.dropIndex index.name, cb_fe
         , cb_wf
     ], cb
