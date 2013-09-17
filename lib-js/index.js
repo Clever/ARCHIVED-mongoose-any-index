@@ -36,7 +36,7 @@
             if (match != null) {
               return cb_fe();
             }
-            console.log("no match for " + (util.inspect(index)) + ", should be dropped");
+            debug("no match for " + (util.inspect(index)) + ", should be dropped");
             return cb_fe();
           }, cb_wf);
         }
