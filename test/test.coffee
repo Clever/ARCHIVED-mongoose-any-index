@@ -10,8 +10,8 @@ util = require 'util'
 any_index = require '../index'
 
 MONGO_TEST_DB = 'test-any-index'
-MONGO_TEST_IP = '127.0.0.1'
-MONGO_TEST_PORT = 27017
+MONGO_TEST_IP = process.env.MONGO_TEST_IP or '127.0.0.1'
+MONGO_TEST_PORT = process.env.MONGO_TEST_PORT or 27017
 
 describe 'mongoose-any-index', ->
   before (done) ->
