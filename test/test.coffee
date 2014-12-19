@@ -56,6 +56,7 @@ describe 'mongoose-any-index', ->
       data: { type: Schema.Types.Mixed }
     Awesome.plugin any_index, [
       { keys: { 'data.whatever_you_want': 1 }, options: { unique: true, sparse: true } }
+      { keys: { 'data.something_else': 1, 'data.second_key': 1 }, options: { unique: true } }
     ]
     @connection.model 'Awesome', Awesome
     setTimeout () =>
@@ -81,6 +82,14 @@ describe 'mongoose-any-index', ->
           ns: 'test-any-index.awesomes'
           name: 'data.whatever_you_want_1'
           sparse: true
+          background: true
+          safe: null
+        ,
+          v: 1
+          unique: true
+          key: { 'data.something_else': 1, 'data.second_key': 1 }
+          name: 'data.something_else_1_data.second_key_1'
+          ns: 'test-any-index.awesomes'
           background: true
           safe: null
         ]
@@ -125,6 +134,14 @@ describe 'mongoose-any-index', ->
           safe: null
         ,
           v: 1
+          unique: true
+          key: { 'data.something_else': 1, 'data.second_key': 1 }
+          name: 'data.something_else_1_data.second_key_1'
+          ns: 'test-any-index.awesomes'
+          background: true
+          safe: null
+        ,
+          v: 1
           key: { 'data.something_different': 1 }
           unique: true
           ns: 'test-any-index.awesomes'
@@ -158,6 +175,14 @@ describe 'mongoose-any-index', ->
           ns: 'test-any-index.awesomes'
           name: 'data.whatever_you_want_1'
           sparse: true
+          background: true
+          safe: null
+        ,
+          v: 1
+          unique: true
+          key: { 'data.something_else': 1, 'data.second_key': 1 }
+          name: 'data.something_else_1_data.second_key_1'
+          ns: 'test-any-index.awesomes'
           background: true
           safe: null
         ,
