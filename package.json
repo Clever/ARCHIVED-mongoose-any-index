@@ -30,8 +30,9 @@
     "grunt-env": "~0.4.0"
   },
   "dependencies": {
-    "mongoose": "~3.6.8",
     "async": "~0.2.8",
+    "kayvee": "^3.13.0",
+    "mongoose": "~3.6.8",
     "underscore": "~1.4.4"
   }
 }
