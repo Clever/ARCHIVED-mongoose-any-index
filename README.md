@@ -1,7 +1,8 @@
-# [ARCHIVED] mongoose-any-index
+# Notice
 
-## ARCHIVED
 This repo is deprecated and we no longer use, support, or recommend it. [More context/discussion](https://github.com/Clever/ARCHIVED-mongoose-any-index/issues/8). 
+
+# mongoose-any-index
 
 [![Build Status](https://travis-ci.org/Clever/mongoose-any-index.png)](https://travis-ci.org/Clever/mongoose-any-index)
 
